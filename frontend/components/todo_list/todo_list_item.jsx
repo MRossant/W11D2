@@ -28,7 +28,7 @@ class TodoListItem extends Component{
             <div>
                 <li onClick={this.flipBool }>{this.props.todo.title}</li>
                 {/* <button onClick={remove}>Delete</button> */}
-                {this.state.detail ? <TodoDetailView /> : ""}
+                {this.state.detail ? <TodoDetailView todo={this.props.todo}/> : ""}
                 <button onClick={this.flip}>{this.props.todo.done ? "Undo" : "Done"}</button>
             </div>
         )}

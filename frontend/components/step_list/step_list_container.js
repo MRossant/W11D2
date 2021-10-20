@@ -1,10 +1,12 @@
 import { connect } from "react-redux";
-import { removeTodo } from "../../actions/todos_actions";
 import { receiveSteps } from "../../actions/step_actions";
+import { stepByTodoId } from "../../reducers/selectors";
 
 const mapDispatchToProps = dispatch => ({
-    removeTodo: todo => dispatch(removeTodo(todo)),
     receiveSteps: step => dispatch(receiveSteps(step))
 })
 
-export default connect(null, mapDispatchToProps)(TodoDetailView)
+const mapStateToProps = (state, otherProps) => {
+    const {id} = otherProps
+    return {steps: stepByTodoId(state, id)}
+}
