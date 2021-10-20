@@ -8,7 +8,14 @@ const TodoList = props => {
             <h1>Todos List</h1>
             <ul>
                 {
-                   props.todos.map(todo => <TodoListItem key={todo.id} todo={todo}/> ) 
+                   props.todos.map(
+                       todo => <TodoListItem 
+                       key={todo.id} 
+                       todo={todo} 
+                       removeTodo={props.removeTodo} 
+                       receiveTodo={props.receiveTodo}
+                       /> 
+                       ) 
                 }
             </ul>
         </div>
