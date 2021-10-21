@@ -5,7 +5,6 @@ class TodoForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: uniqueId(),
             title: '',
             body: '',
             done: false
@@ -26,13 +25,11 @@ class TodoForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.receiveTodo(this.state);
-        this.setState({
-            id: uniqueId(),
-            title: '',
-            body: '',
-            done: false
-        })
+        // debugger
+        this.props.createTodo(this.state).then(
+            () => this.setState({ title: '', body: '' })
+        );
+        
     }
 
 
