@@ -9,6 +9,7 @@ class Api::TodosController < ApplicationController
     end
 
     def create
+        # debugger
         todo = Todo.new(todo_params)
         if todo.save
             render json: todo
@@ -32,7 +33,7 @@ class Api::TodosController < ApplicationController
     end
 
     private
-    def todo_params(params)
+    def todo_params
         params.require(:todo).permit(:title, :body, :done)
     end
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {configureStore} from './store/store'
-import { receiveTodos, receiveTodo, removeTodo, fetchTodos } from './actions/todos_actions'
+import { receiveTodos, receiveTodo, removeTodo, fetchTodos, createTodo } from './actions/todos_actions'
 import { receiveSteps, receiveStep, removeStep} from './actions/step_actions'
 import Root from "./components/root"
 import {allTodos} from "./reducers/selectors"
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     window.removeStep = removeStep;
     window.allTodos = allTodos;
     window.fetchTodos = fetchTodos;
+    window.createTodo = createTodo;
 
 })
 
